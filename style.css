@@ -1,0 +1,103 @@
+/* style.css */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  margin: 0;
+  background: #f7f4ec;
+  color: #1f2430;
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+  line-height: 1.7;
+}
+
+h1, h2 { color: #12355b; }
+h2 { border-bottom: 3px solid #ffc72c; padding-bottom: .3rem; }
+
+/* Link states */
+a:link    { color: #0a4d8c; }
+a:visited { color: #5b2a86; }
+a:hover   { color: #b00020; }
+a:active  { color: #6b0014; }
+
+/* Banner */
+.hero { position: relative; }
+.banner { display: block; width: 100%; height: 300px; object-fit: cover; filter: brightness(.55); }
+.hero-text {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 1rem 8%; color: #fff;
+  animation: fadeUp 1s ease-out;
+}
+.hero-text h1 { color: #fff; margin: 0 0 .5rem; }
+
+main { max-width: 56rem; margin: 2rem auto; padding: 0 1rem; }
+
+/* Box model 1 */
+.card {
+  margin: 0 0 2rem;
+  padding: 1.5rem 2rem;
+  background: #fff;
+  border: 2px solid #12355b;
+  border-radius: 10px;
+}
+
+/* Floated image with text wrapping */
+.float-img {
+  float: right;
+  margin: 0 0 .75rem 1.25rem;
+  border: 3px solid #ffc72c;
+  max-width: 100%;
+  height: auto;
+  transition: transform .4s ease;
+}
+.float-img:hover { transform: scale(1.05); }
+
+/* Box model 2 */
+.infographic {
+  width: 300px;
+  margin: 0 auto 2rem;
+  padding: 20px;
+  border: 5px solid #12355b;
+  background: #fff3c4;
+  text-align: center;
+}
+.infographic img { max-width: 100%; height: auto; }
+
+/* Box model 3: table */
+table { width: 100%; margin: 1rem 0; border-collapse: collapse; border: 2px solid #12355b; }
+caption { padding: .5rem 0; text-align: left; font-weight: 700; color: #12355b; }
+th, td { padding: .7rem 1rem; border: 1px solid #12355b; text-align: left; }
+thead th { background: #12355b; color: #fff; }
+tbody tr:nth-child(even) { background: #fff3c4; }
+tbody tr:hover { background: #ffe38a; }
+
+/* Box model 4: button */
+.btn, .btn:link, .btn:visited {
+  display: inline-block;
+  margin: .5rem 0;
+  padding: .8rem 1.8rem;
+  border: 3px solid #ffc72c;
+  border-radius: 999px;
+  background: #12355b;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color .3s ease, color .3s ease;
+}
+.btn:hover, .btn:active { background: #ffc72c; color: #12355b; }
+
+footer { padding: 1.5rem 1rem; background: #12355b; color: #fff; text-align: center; font-size: .9rem; }
+
+/* ANIMATIONS
+   1. .btn: background and text colour change smoothly from navy to gold on hover. Duration: 0.3s.
+   2. .float-img: the image scales up to 105% on hover. Duration: 0.4s.
+   3. .hero-text: fadeUp makes the banner text fade in and slide up on page load. Duration: 1s, once. */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+  .float-img { float: none; display: block; margin: 0 auto 1rem; }
+  .card { padding: 1.2rem 1rem; }
+  table { font-size: .9rem; }
+}
